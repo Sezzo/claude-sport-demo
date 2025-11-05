@@ -1,0 +1,45 @@
+asyncapi: 2.6.0
+info:
+  title: Claude Demo WS
+  version: 0.1.0
+defaultContentType: application/json
+channels:
+  session.join:
+    publish:
+      message:
+        name: SessionJoin
+        payload:
+          type: object
+          properties:
+            sessionId: { type: string }
+            userId: { type: string }
+  player.control:
+    publish:
+      message:
+        name: PlayerControl
+        payload:
+          type: object
+          properties:
+            sessionId: { type: string }
+            action: { type: string, enum: [play, pause, seek, load] }
+            position: { type: number }
+            videoId: { type: string }
+            issuedAt: { type: number }
+    subscribe:
+      message:
+        $ref: '#/channels/player.control/publish/message'
+  hr.update:
+    publish:
+      message:
+        name: HrUpdate
+        payload:
+          type: object
+          properties:
+            sessionId: { type: string }
+            userId: { type: string }
+            bpm: { type: integer }
+            t: { type: number }
+            device: { type: string }
+    subscribe:
+      message:
+        $ref: '#/channels/hr.update/publish/message'

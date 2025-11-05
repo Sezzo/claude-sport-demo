@@ -1,0 +1,15 @@
+name: CD Staging
+on:
+  workflow_run:
+    workflows: ["CI"]
+    types: [completed]
+    branches: [main]
+jobs:
+  deploy:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      # Placeholder: add deployment to Render/Fly/Railway here.
+      - run: echo "Deploy to staging..."
+      - run: echo "Would deploy Docker images and update staging environment"

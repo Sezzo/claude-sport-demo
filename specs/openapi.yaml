@@ -1,0 +1,78 @@
+openapi: 3.0.3
+info:
+  title: Claude Demo API
+  version: 0.1.0
+paths:
+  /sessions:
+    post:
+      operationId: createSession
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [youtubeVideoId]
+              properties:
+                youtubeVideoId: { type: string }
+                title: { type: string }
+                hostUserId: { type: string }
+      responses:
+        "200":
+          description: OK
+  /sessions/{id}:
+    get:
+      operationId: getSession
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema: { type: string }
+      responses:
+        "200": { description: OK }
+  /sessions/{id}/join:
+    post:
+      operationId: joinSession
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema: { type: string }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [userId]
+              properties:
+                userId: { type: string }
+                role: { type: string }
+      responses:
+        "200": { description: OK }
+  /sessions/{id}/cues:
+    get:
+      operationId: getSessionCues
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema: { type: string }
+      responses:
+        "200": { description: OK }
+  /parser/youtube:
+    post:
+      operationId: parseYouTube
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [videoId]
+              properties:
+                videoId: { type: string }
+                description: { type: string }
+                duration: { type: number }
+      responses:
+        "200": { description: OK }
