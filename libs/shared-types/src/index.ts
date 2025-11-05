@@ -124,6 +124,22 @@ export interface HRUpdateEvent {
   device: string;
 }
 
+export interface ZoneUpdateEvent {
+  zoneCode: ZoneCode;
+  zoneName: string;
+  confidence: number;
+  timestamp: string;
+}
+
+export interface ZoneDetectEvent {
+  sessionId: string;
+  imageBase64: string;
+  roiX?: number;
+  roiY?: number;
+  roiWidth?: number;
+  roiHeight?: number;
+}
+
 export interface SessionJoinEvent {
   sessionId: string;
   userId: string;
@@ -161,6 +177,22 @@ export interface ParseYouTubeRequest {
 export interface ParseYouTubeResponse {
   cues: VideoCue[];
   zones: Record<ZoneCode, [number, number]>;
+}
+
+export interface DetectZoneRequest {
+  sessionId: string;
+  imageBase64: string;
+  roiX?: number;
+  roiY?: number;
+  roiWidth?: number;
+  roiHeight?: number;
+}
+
+export interface DetectZoneResponse {
+  code: ZoneCode;
+  name: string;
+  confidence: number;
+  dominantColor: { r: number; g: number; b: number };
 }
 
 // Utility Types
