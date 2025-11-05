@@ -1,0 +1,11 @@
+{
+  "name": "@tools/hr-sim",
+  "private": true,
+  "scripts": { "start": "ts-node sim.ts" },
+  "dependencies": { "socket.io-client": "^4.7.5" },
+  "devDependencies": {
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.3",
+    "@types/node": "^20.11.30"
+  }
+}

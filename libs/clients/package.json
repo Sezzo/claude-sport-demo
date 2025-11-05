@@ -1,0 +1,21 @@
+{
+  "name": "@libs/clients",
+  "version": "0.1.0",
+  "private": true,
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "codegen": "npm run codegen:openapi && npm run codegen:asyncapi",
+    "codegen:openapi": "openapi-typescript ../../specs/openapi.yaml -o src/openapi.ts",
+    "codegen:asyncapi": "echo 'AsyncAPI codegen placeholder'",
+    "build": "tsc",
+    "dev": "tsc --watch"
+  },
+  "dependencies": {
+    "@libs/shared-types": "workspace:*"
+  },
+  "devDependencies": {
+    "openapi-typescript": "^6.7.5",
+    "typescript": "^5.6.3"
+  }
+}

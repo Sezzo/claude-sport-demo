@@ -1,0 +1,8 @@
+task: implement-sync
+goals:
+  - Implement drift control in web client
+  - Add WS broadcast handling on join
+  - Create unit tests for target position calculation
+acceptance:
+  - Jest tests in services/api and apps/web pass
+  - E2E drift-scenario marked as passed

@@ -1,0 +1,20 @@
+🌈 COLOUR CODE Training - 30 Min Interval Workout
+
+This workout uses heart rate zones indicated by color codes:
+⚪ White (Recovery) - 0-50% max HR
+⚫️ Grey (Easy) - 50-59% max HR
+🔵 Blue (Aerobic) - 60-69% max HR
+🟢 Green (Tempo) - 70-79% max HR
+🟡 Yellow (Threshold) - 80-89% max HR
+🔴 Red (VO2 Max) - 90-100% max HR
+
+Workout Structure:
+0:00 - 5:00 ⚪ White Warm-up
+5:00 - 10:00 🔵 Blue Easy pace
+10:00 - 12:00 🟢 Green Tempo build
+12:00 - 15:00 🟡 Yellow High intensity
+15:00 - 17:00 🔴 Red Maximum effort
+17:00 - 20:00 🟢 Green Active recovery
+20:00 - 22:00 🟡 Yellow Second interval
+22:00 - 24:00 🔴 Red Peak effort
+24:00 - 30:00 🔵 Blue Cool-down

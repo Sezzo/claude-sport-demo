@@ -1,0 +1,61 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id          String   @id @default(uuid())
+  email       String   @unique
+  displayName String?
+  birthYear   Int?
+  hrMax       Int?
+  createdAt   DateTime @default(now())
+  devices     Device[]
+  sessions    SessionMember[]
+}
+
+model Device {
+  id            String  @id @default(uuid())
+  userId        String
+  type          String
+  model         String?
+  bleIdentifier String?
+  createdAt     DateTime @default(now())
+  user          User    @relation(fields: [userId], references: [id])
+}
+
+model Session {
+  id             String    @id @default(uuid())
+  hostUserId     String
+  youtubeVideoId String
+  title          String?
+  startAt        DateTime?
+  status         String     @default("waiting")
+  createdAt      DateTime   @default(now())
+  members        SessionMember[]
+}
+
+model SessionMember {
+  sessionId String
+  userId    String
+  role      String @default("participant")
+  joinedAt  DateTime @default(now())
+  session   Session @relation(fields: [sessionId], references: [id])
+  user      User    @relation(fields: [userId], references: [id])
+  @@id([sessionId, userId])
+}
+
+model VideoCue {
+  id              String  @id @default(uuid())
+  youtubeVideoId  String
+  segmentIndex    Int
+  startS          Int
+  endS            Int
+  zoneCode        String
+  label           String?
+  @@index([youtubeVideoId, segmentIndex])
+}
