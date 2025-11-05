@@ -1,0 +1,30 @@
+{
+  "name": "ClaudeSportDemo",
+  "displayName": "Claude Sport Demo",
+  "version": "0.1.0",
+  "description": "Synchronized YouTube Training with Heart Rate Zones",
+  "orientation": "portrait",
+  "platforms": ["ios", "android"],
+  "ios": {
+    "bundleIdentifier": "com.claude.sportdemo",
+    "buildNumber": "1",
+    "supportsTablet": true,
+    "infoPlist": {
+      "NSCameraUsageDescription": "This app does not use the camera",
+      "NSMicrophoneUsageDescription": "This app does not use the microphone"
+    }
+  },
+  "android": {
+    "package": "com.claude.sportdemo",
+    "versionCode": 1,
+    "adaptiveIcon": {
+      "foregroundImage": "./assets/adaptive-icon.png",
+      "backgroundColor": "#ffffff"
+    },
+    "permissions": [
+      "android.permission.INTERNET",
+      "android.permission.BLUETOOTH",
+      "android.permission.BLUETOOTH_ADMIN"
+    ]
+  }
+}

@@ -6,6 +6,8 @@ Autonomous setup for synchronized YouTube training sessions with real-time heart
 
 This monorepo contains a complete MVP for synchronized video training with:
 - **Web App**: Next.js with YouTube IFrame API for synchronized video playback
+- **Mobile App**: React Native (iOS/Android) with YouTube SDK integration
+- **Watch Apps**: Placeholders for watchOS and Wear OS (HR monitoring)
 - **Backend API**: NestJS with REST endpoints and WebSocket gateway for real-time sync
 - **Heart Rate Simulator**: Tool for testing HR zone coaching without real devices
 - **COLOUR CODE Parser**: Extracts training zones from YouTube video descriptions
@@ -74,7 +76,9 @@ make hr-sim
 .
 ├── apps/
 │   ├── web/              # Next.js web application
-│   └── mobile/           # React Native (placeholder)
+│   ├── mobile/           # React Native app (iOS/Android)
+│   ├── watch-ios/        # watchOS companion (placeholder)
+│   └── watch-android/    # Wear OS companion (placeholder)
 ├── services/
 │   └── api/              # NestJS backend (REST + WebSocket)
 ├── libs/
@@ -97,8 +101,9 @@ make hr-sim
 - **Build System**: Turborepo
 - **Backend**: NestJS, Prisma, PostgreSQL, Redis, Socket.IO
 - **Web**: Next.js 14, React 18, Socket.IO Client
-- **Mobile**: React Native (bare) - placeholder
-- **Testing**: Jest, Playwright
+- **Mobile**: React Native 0.76 (Bare), YouTube IFrame, Socket.IO Client
+- **Watch**: watchOS (Swift/HealthKit), Wear OS (Kotlin/Health Services) - Placeholders
+- **Testing**: Jest, Playwright, Detox (planned)
 - **DevOps**: Docker Compose, GitHub Actions
 
 ## Features
@@ -155,6 +160,36 @@ The simulator sends realistic HR data every second with a training profile:
 - 0-5 min: Warmup (100-140 BPM)
 - 5-15 min: Intervals (140-170 BPM)
 - 15+ min: Recovery (120 BPM)
+
+### 4. Mobile App (iOS/Android)
+
+Native mobile experience with synchronized playback:
+
+**Features**:
+- YouTube video player (visible, ToS-compliant)
+- Session creation and joining
+- Real-time sync with other participants
+- Heart rate display with zone indicators
+- Training timeline with cue navigation
+
+**Running**:
+```bash
+cd apps/mobile
+pnpm install
+
+# iOS
+cd ios && pod install && cd ..
+pnpm ios
+
+# Android
+pnpm android
+```
+
+**Platforms**:
+- iOS 13+ (iPhone, iPad)
+- Android API 24+ (phones, tablets)
+
+See [apps/mobile/README.md](apps/mobile/README.md) for detailed setup.
 
 ## YouTube ToS Compliance
 
