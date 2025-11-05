@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Training Watch</string>
+
+    <!-- Permission strings -->
+    <string name="permission_body_sensors_rationale">Body sensors permission is required to monitor your heart rate during training sessions.</string>
+    <string name="permission_required">Permission Required</string>
+    <string name="grant_permission">Grant Permission</string>
+
+    <!-- Session status strings -->
+    <string name="status_not_connected">Not Connected</string>
+    <string name="status_connected">Connected to Phone</string>
+    <string name="status_monitoring">Monitoring...</string>
+    <string name="status_session_active">Session Active</string>
+    <string name="status_session_ended">Session Ended</string>
+    <string name="status_stopped">Stopped</string>
+    <string name="status_disconnected">Phone Disconnected</string>
+
+    <!-- Button labels -->
+    <string name="button_start">Start</string>
+    <string name="button_stop">Stop</string>
+
+    <!-- Heart rate display -->
+    <string name="bpm_label">BPM</string>
+    <string name="percent_of_max">%1$d%% of max</string>
+    <string name="no_heart_rate">--</string>
+
+    <!-- Zone names -->
+    <string name="zone_white">Recovery</string>
+    <string name="zone_grey">Endurance</string>
+    <string name="zone_blue">Tempo</string>
+    <string name="zone_green">Threshold</string>
+    <string name="zone_yellow">VO2 Max</string>
+    <string name="zone_red">Anaerobic</string>
+
+    <!-- Notification -->
+    <string name="notification_title">Training Active</string>
+    <string name="notification_text">Monitoring heart rate...</string>
+    <string name="notification_channel_name">Heart Rate Monitoring</string>
+    <string name="notification_channel_description">Continuous heart rate monitoring for training</string>
+
+    <!-- Error messages -->
+    <string name="error_permission_denied">Body sensors permission denied</string>
+    <string name="error_hr_not_supported">Heart rate monitoring not supported on this device</string>
+    <string name="error_phone_disconnected">Phone disconnected</string>
+    <string name="error_session_failed">Failed to start session</string>
+</resources>
